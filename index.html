@@ -316,7 +316,7 @@
         }
         
         /* ========== SWOT GRID ========== */
-        .swot-grid {
+        /* .swot-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
@@ -344,8 +344,158 @@
         .swot-icon {
             font-size: 2.5rem;
             margin-bottom: 20px;
-        }
-        
+        } */
+        .stages-timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 3px solid #dee2e6;
+    margin-left: 15px;
+}
+
+.stages-timeline::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    border-radius: 50%;
+}
+
+.stage {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-right: 4px solid #007bff;
+}
+
+.stage-number {
+    position: absolute;
+    left: -45px;
+    top: 15px;
+    width: 30px;
+    height: 30px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.swot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.swot-item {
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.swot-item:hover {
+    transform: translateY(-5px);
+}
+
+.swot-strengths {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border: 2px solid #28a745;
+}
+
+.swot-weaknesses {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    border: 2px solid #dc3545;
+}
+
+.swot-opportunities {
+    background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+    border: 2px solid #17a2b8;
+}
+
+.swot-threats {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border: 2px solid #ffc107;
+}
+
+.swot-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.swot-strengths .swot-icon {
+    color: #28a745;
+}
+
+.swot-weaknesses .swot-icon {
+    color: #dc3545;
+}
+
+.swot-opportunities .swot-icon {
+    color: #17a2b8;
+}
+
+.swot-threats .swot-icon {
+    color: #ffc107;
+}
+
+.priority-badges .badge {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.tows-item {
+    border-radius: 5px;
+    border-left: 4px solid;
+}
+
+.tows-matrix .row > div:nth-child(1) .tows-item:first-child {
+    border-left-color: #28a745;
+}
+
+.tows-matrix .row > div:nth-child(1) .tows-item:last-child {
+    border-left-color: #ffc107;
+}
+
+.tows-matrix .row > div:nth-child(2) .tows-item:first-child {
+    border-left-color: #17a2b8;
+}
+
+.tows-matrix .row > div:nth-child(2) .tows-item:last-child {
+    border-left-color: #dc3545;
+}
+
+.swot-form {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.implementation-table table {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .stages-timeline {
+        padding-left: 20px;
+        margin-left: 10px;
+    }
+    
+    .stage-number {
+        left: -35px;
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+    }
+    
+    .swot-grid {
+        grid-template-columns: 1fr;
+    }
+}
         /* ========== MARKET CARDS ========== */
         .market-cards {
             display: grid;
@@ -877,86 +1027,247 @@
         </section>
 
         <!-- SWOT Analysis Section -->
-        <section id="swot" class="mb-5">
-            <div class="content-card animate-in">
-                <div class="section-icon">
-                    <i class="fas fa-chart-bar"></i>
-                </div>
-                <div class="section-title">
-                    <h2><i class="fas fa-clipboard-list me-3"></i> تحليل SWOT</h2>
-                </div>
-                
-                <p>هو أداة استراتيجية بتساعد الشركات تفهم إيه اللي بيميزها، إيه اللي بيعطلها، إيه الفرص اللي في السوق، وإيه التهديدات اللي لازم تستعد لها.</p>
-                
-                <div class="swot-grid">
-                    <div class="swot-item swot-strengths">
-                        <div class="swot-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h4>نقاط القوة</h4>
-                        <p class="mt-3">داخلية - إيجابية. الحاجات اللي الشركة بتعملها كويس جدًا، وبتديها ميزة عن المنافسين.</p>
-                        <ul class="mt-3">
-                            <li>جودة عالية</li>
-                            <li>سمعة قوية</li>
-                            <li>فريق محترف</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="swot-item swot-weaknesses">
-                        <div class="swot-icon">
-                            <i class="fas fa-exclamation-circle"></i>
-                        </div>
-                        <h4>نقاط الضعف</h4>
-                        <p class="mt-3">داخلية - سلبية. الحاجات اللي جوا الشركة وبتعرقل نجاحها.</p>
-                        <ul class="mt-3">
-                            <li>ضعف التسويق</li>
-                            <li>قلة الخبرات</li>
-                            <li>موارد غير كافية</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="swot-item swot-opportunities">
-                        <div class="swot-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h4>الفرص</h4>
-                        <p class="mt-3">خارجية - إيجابية. الحاجات اللي بتحصل في البيئة الخارجية وتقدر الشركة تستغلها.</p>
-                        <ul class="mt-3">
-                            <li>زيادة الطلب</li>
-                            <li>تريند جديد</li>
-                            <li>أسواق جديدة</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="swot-item swot-threats">
-                        <div class="swot-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4>التهديدات</h4>
-                        <p class="mt-3">خارجية - سلبية. العوامل اللي ممكن تضر الشركة أو تعطلها.</p>
-                        <ul class="mt-3">
-                            <li>منافسة قوية</li>
-                            <li>قوانين جديدة</li>
-                            <li>تغير اقتصادي</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="info-box important mt-4">
-                    <div class="info-box-title">
-                        <i class="fas fa-cogs text-warning"></i>
-                        <span>كيفية تطبيق تحليل SWOT</span>
-                    </div>
-                    <ol class="mt-3">
-                        <li>اجمع بيانات دقيقة عن السوق والمنافسين</li>
-                        <li>شارك الفريق في عملية التحليل</li>
-                        <li>رتب النقاط حسب الأهمية والتأثير</li>
-                        <li>طور استراتيجيات بناءً على النتائج</li>
-                        <li>راجع التحليل دورياً مع تغير الظروف</li>
-                    </ol>
+<section id="swot" class="mb-5">
+    <div class="content-card animate-in">
+        <div class="section-icon">
+            <i class="fas fa-chart-bar"></i>
+        </div>
+        <div class="section-title">
+            <h2><i class="fas fa-clipboard-list me-3"></i> تحليل SWOT - المراحل الكاملة</h2>
+        </div>
+        
+        <p class="lead">تحليل شامل للموقف الاستراتيجي للشركة من خلال تقييم العوامل الداخلية والخارجية المؤثرة على الأداء.</p>
+        
+        <!-- مراحل SWOT -->
+        <div class="stages-timeline mb-5">
+            <div class="stage">
+                <div class="stage-number">1</div>
+                <div class="stage-content">
+                    <h5>المرحلة الأولى: جمع البيانات</h5>
+                    <p>تجميع المعلومات الدقيقة من مصادر متنوعة:</p>
+                    <ul class="mt-2">
+                        <li>أداء الـ 5S (من SITUATION ANALYSIS)</li>
+                        <li>استبيانات رضا العملاء (من CONTROL)</li>
+                        <li>تحليلات زوار الموقع وملفاتهم الشخصية</li>
+                        <li>نتائج اختبارات سهولة الاستخدام</li>
+                        <li>تقارير الأداء والـ KPIs</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+            
+            <div class="stage">
+                <div class="stage-number">2</div>
+                <div class="stage-content">
+                    <h5>المرحلة الثانية: التحديد والتصنيف</h5>
+                    <p>تصنيف المعلومات إلى العناصر الأربعة لـ SWOT:</p>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h6>عوامل داخلية:</h6>
+                            <span class="badge bg-success me-2">نقاط القوة</span>
+                            <span class="badge bg-danger">نقاط الضعف</span>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>عوامل خارجية:</h6>
+                            <span class="badge bg-info me-2">الفرص</span>
+                            <span class="badge bg-warning">التهديدات</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stage">
+                <div class="stage-number">3</div>
+                <div class="stage-content">
+                    <h5>المرحلة الثالثة: التحليل والتقييم</h5>
+                    <p>تقييم كل عنصر حسب الأهمية والتأثير:</p>
+                    <div class="priority-levels mt-2">
+                        <div class="priority-item">
+                            <span class="priority-label">الأهمية:</span>
+                            <div class="priority-badges">
+                                <span class="badge bg-dark">عالية</span>
+                                <span class="badge bg-secondary">متوسطة</span>
+                                <span class="badge bg-light text-dark">منخفضة</span>
+                            </div>
+                        </div>
+                        <div class="priority-item mt-2">
+                            <span class="priority-label">الاحتمالية:</span>
+                            <div class="priority-badges">
+                                <span class="badge bg-dark">مرتفعة</span>
+                                <span class="badge bg-secondary">متوسطة</span>
+                                <span class="badge bg-light text-dark">منخفضة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stage">
+                <div class="stage-number">4</div>
+                <div class="stage-content">
+                    <h5>المرحلة الرابعة: صياغة الاستراتيجيات (TOWS)</h5>
+                    <p>تحويل النتائج إلى استراتيجيات قابلة للتنفيذ:</p>
+                    <div class="tows-matrix mt-2">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="tows-item bg-success bg-opacity-10 p-2 mb-2">
+                                    <strong>نقاط القوة + فرص:</strong> استغلال السمعة القوية لدخول أسواق جديدة
+                                </div>
+                                <div class="tows-item bg-warning bg-opacity-10 p-2">
+                                    <strong>نقاط القوة + تهديدات:</strong> استخدام الفريق المحترف لمواجهة المنافسة
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tows-item bg-info bg-opacity-10 p-2 mb-2">
+                                    <strong>نقاط الضعف + فرص:</strong> تدريب الفريق لاستغلال زيادة الطلب
+                                </div>
+                                <div class="tows-item bg-danger bg-opacity-10 p-2">
+                                    <strong>نقاط الضعف + تهديدات:</strong> تحسين التكامل لتفادي تأثير القوانين
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stage">
+                <div class="stage-number">5</div>
+                <div class="stage-content">
+                    <h5>المرحلة الخامسة: التنفيذ والمتابعة</h5>
+                    <p>تحويل الاستراتيجيات إلى خطط عملية ومتابعة التنفيذ:</p>
+                    <div class="implementation-table mt-2">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>الاستراتيجية</th>
+                                    <th>الخطة التكتيكية</th>
+                                    <th>المسؤولية</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>تحسين التسويق الرقمي</td>
+                                    <td>جدولة حملات إلكترونية، تطوير استراتيجية محتوى</td>
+                                    <td>فريق التسويق + وكالات خارجية</td>
+                                </tr>
+                                <tr>
+                                    <td>تعزيز تجربة المستخدم</td>
+                                    <td>اختبارات سهولة الاستخدام، تحليل سلوك الزوار</td>
+                                    <td>فريق التطوير</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- شبكة SWOT التفصيلية -->
+        <div class="swot-grid">
+            <div class="swot-item swot-strengths">
+                <div class="swot-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h4>نقاط القوة <span class="badge bg-success">داخلية - إيجابية</span></h4>
+                <p class="mt-3">المميزات الداخلية التي تعطي الشركة أفضلية تنافسية.</p>
+                <div class="swot-examples">
+                    <h6>أمثلة من تحليل الوضع الحالي:</h6>
+                    <ul class="mt-2">
+                        <li>جودة عالية في المنتجات/الخدمات</li>
+                        <li>سمعة قوية في السوق</li>
+                        <li>فريق عمل محترف ومتخصص</li>
+                        <li>بنية تحتية تقنية متطورة</li>
+                        <li>قاعدة عملاء مخلصين</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="swot-item swot-weaknesses">
+                <div class="swot-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <h4>نقاط الضعف <span class="badge bg-danger">داخلية - سلبية</span></h4>
+                <p class="mt-3">العيوب الداخلية التي تحتاج إلى تحسين.</p>
+                <div class="swot-examples">
+                    <h6>أمثلة من تقارير الأداء:</h6>
+                    <ul class="mt-2">
+                        <li>ضعف في استراتيجية التسويق الرقمي</li>
+                        <li>قلة الخبرات التقنية المتخصصة</li>
+                        <li>موارد مالية غير كافية</li>
+                        <li>بطء في عمليات التطوير</li>
+                        <li>ضعف التكامل بين الأنظمة</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="swot-item swot-opportunities">
+                <div class="swot-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h4>الفرص <span class="badge bg-info">خارجية - إيجابية</span></h4>
+                <p class="mt-3">العوامل الخارجية التي يمكن استغلالها للنمو.</p>
+                <div class="swot-examples">
+                    <h6>أمثلة من تحليل السوق:</h6>
+                    <ul class="mt-2">
+                        <li>زيادة الطلب على الخدمات الرقمية</li>
+                        <li>ظهور تكنولوجيات جديدة (مثل الذكاء الاصطناعي)</li>
+                        <li>أسواق جديدة غير مستغلة</li>
+                        <li>تغيرات إيجابية في القوانين</li>
+                        <li>شراكات استراتيجية محتملة</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="swot-item swot-threats">
+                <div class="swot-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>التهديدات <span class="badge bg-warning">خارجية - سلبية</span></h4>
+                <p class="mt-3">العوامل الخارجية التي تشكل مخاطر على الأداء.</p>
+                <div class="swot-examples">
+                    <h6>أمثلة من تحليل المنافسة:</h6>
+                    <ul class="mt-2">
+                        <li>منافسة قوية من شركات جديدة</li>
+                        <li>تغيرات في القوانين والتشريعات</li>
+                        <li>تقلبات اقتصادية عالمية</li>
+                        <li>تغيرات في تفضيلات العملاء</li>
+                        <li>مخاطر أمن المعلومات والقرصنة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- أدوات التنفيذ والمتابعة -->
+        <div class="info-box important mt-4">
+            <div class="info-box-title">
+                <i class="fas fa-cogs text-warning"></i>
+                <span>خطة التنفيذ والمتابعة</span>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <h6>مؤشرات الأداء (KPIs) للمتابعة:</h6>
+                    <ul>
+                        <li>معدل تحويل الزوار إلى عملاء</li>
+                        <li>مستوى رضا العملاء (CSAT)</li>
+                        <li>حصتنا السوقية الرقمية</li>
+                        <li>معدل نمو الإيرادات من القنوات الإلكترونية</li>
+                        <li>مؤشر الأداء العام للـ 5S</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h6>التكامل مع مراحل الخطة:</h6>
+                    <ul>
+                        <li>ربط مع <strong>STRATEGY</strong>: تحديد الفئات المستهدفة والتوجه</li>
+                        <li>ربط مع <strong>TACTICS</strong>: تفصيل المزيج التسويقي الرقمي</li>
+                        <li>ربط مع <strong>ACTION</strong>: تحديد المسؤوليات والموارد</li>
+                        <li>ربط مع <strong>CONTROL</strong>: وضع أنظمة المتابعة والتقييم</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    
+    </div>
+</section>
 
         <!-- Marketing Strategy Section -->
         <section id="strategy" class="mb-5">
@@ -1230,4 +1541,5 @@
         }, 3000);
     </script>
 </body>
+
 </html>
